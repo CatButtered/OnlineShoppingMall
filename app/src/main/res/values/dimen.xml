@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_word_prompt">12sp</dimen>
+    <dimen name="main_text">14sp</dimen>
+    <dimen name="button_text">14sp</dimen>
+    <dimen name="subtitle">16sp</dimen>
+    <dimen name="appbar_text">20sp</dimen>
+    <dimen name="Headline">24sp</dimen>
+    <dimen name="large_text1">34sp</dimen>
+    <dimen name="large_text2">45sp</dimen>
+    <dimen name="large_text3">56sp</dimen>
+    <dimen name="large_text4">112sp</dimen>
+
+    <dimen name="grid">8dp</dimen>
+    <dimen name="leave_blank">16dp</dimen>
+
+</resources>
