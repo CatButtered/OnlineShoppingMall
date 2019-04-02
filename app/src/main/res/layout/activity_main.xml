@@ -4,15 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.9"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1">
+
+        <RadioButton
+            android:id="@+id/rd_homepage"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/picture_rd1"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@drawable/my_text_color" />
+
+        <RadioButton
+            android:id="@+id/rd_message"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/picture_rd2"
+            android:gravity="center"
+            android:text="消息"
+            android:textColor="@drawable/my_text_color" />
+
+        <RadioButton
+            android:id="@+id/rd_shoppingcart"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/picture_rd3"
+            android:gravity="center"
+            android:text="购物车"
+            android:textColor="@drawable/my_text_color" />
+
+        <RadioButton
+            android:id="@+id/rd_personcenter"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/picture_rd4"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@drawable/my_text_color" />
+
+    </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>
