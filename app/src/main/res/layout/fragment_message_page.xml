@@ -58,6 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="114dp"
         android:layout_margin="@dimen/leave_blank"
@@ -155,11 +156,19 @@
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.CardView>
 
-    <!--<com.onlineshoppingmall.until.CircleImageView-->
-    <!--android:layout_width="48dp"-->
-    <!--android:layout_height="48dp"-->
-    <!--android:layout_margin="@dimen/leave_blank"-->
-    <!--android:src="@drawable/logistics" />-->
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/list"
+        android:name="com.onlineshoppingmall.communication.MessageFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/leave_blank"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".communication.MessageFragment"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/fragment_message" />
 
 
 </android.support.constraint.ConstraintLayout>
