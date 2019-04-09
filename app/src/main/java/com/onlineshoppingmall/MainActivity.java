@@ -1,15 +1,18 @@
 package com.onlineshoppingmall;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
+import com.android.volley.RequestQueue;
+import com.onlineshoppingmall.communication.Message.MessageContent;
 import com.onlineshoppingmall.communication.MessageFragment;
 import com.onlineshoppingmall.communication.MessagePageFragment;
-import com.onlineshoppingmall.communication.dummy.DummyContent;
 import com.onlineshoppingmall.home.HomePageFragment;
+import com.onlineshoppingmall.until.MainViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(MessageContent.MessageItem item) {
 
     }
 }

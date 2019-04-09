@@ -11,10 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.onlineshoppingmall.R;
-import com.onlineshoppingmall.communication.dummy.DummyContent;
-import com.onlineshoppingmall.communication.dummy.DummyContent.DummyItem;
-
-import cn.bingoogolapple.badgeview.BGABadgeAppCompatTextView;
+import com.onlineshoppingmall.communication.Message.MessageContent;
+import com.onlineshoppingmall.communication.Message.MessageContent.MessageItem;
 
 /**
  * A fragment representing a list of Items.
@@ -70,7 +68,7 @@ public class MessageFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MessageRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MessageRecyclerViewAdapter(MessageContent.ITEMS, mListener));
         }
         return view;
     }
@@ -105,6 +103,6 @@ public class MessageFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(MessageItem item);
     }
 }

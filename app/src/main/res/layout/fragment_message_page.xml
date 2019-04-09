@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/leave_blank"
         android:layout_marginEnd="@dimen/leave_blank"
-        android:background="@drawable/msg_contact"
+        android:src="@drawable/msg_contact"
         app:layout_constraintEnd_toStartOf="@id/_msg_plus"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/leave_blank"
         android:layout_marginEnd="@dimen/leave_blank"
-        android:background="@drawable/msg_plus"
+        android:src="@drawable/msg_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
