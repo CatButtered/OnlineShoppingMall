@@ -1,6 +1,8 @@
 package com.onlineshoppingmall.communication;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -80,7 +82,12 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
                     Toast.makeText(holder.mView.getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    Intent intent = new Intent(holder.mView.getContext(), ChatActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("item", holder.mItem);
+                    intent.putExtras(bundle);
+                    holder.mView.getContext().startActivity(intent);
+//                    mListener.onListFragmentInteraction(holder.mItem);
                 }
             }
         });

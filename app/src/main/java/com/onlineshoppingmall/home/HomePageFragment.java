@@ -1,22 +1,28 @@
 package com.onlineshoppingmall.home;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatImageView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.onlineshoppingmall.MainActivity;
 import com.onlineshoppingmall.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomePageFragment extends Fragment implements View.OnClickListener {
+
 
     AppCompatImageView search;
     //ViewPager
@@ -29,22 +35,20 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
     private int[] imgIdArray;
     private ViewGroup group;
 
-//    @SuppressLint("HandlerLeak")
-//    Handler handler = new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            int curindex = (viewPager.getCurrentItem()+1)%(AppCompatImageViews.length+2);
-//            viewPager.removeView(getView());
-//            viewPager.setCurrentItem(curindex,true);
-//        }
-//    };
-//    Runnable runnable = new Runnable() {
-//        @Override
-//        public void run() {
-//            Message message = new Message();
-//            handler.sendMessage(message);
-//        }
-//    };
+
+    Handler handler = new Handler(){
+      @Override
+        public void handleMessage(Message msg) {
+            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+        }
+    };
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            autoplay();
+        }
+    };
 
 
     public HomePageFragment() {
@@ -84,14 +88,22 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
 
 
             }
-        });
-        //handler.postDelayed(runnable,3*1000);
+        }); autoplay();
+
+
 
 
         return v;
     }
+    //实现自动播放
+    public void autoplay(){
+        Log.i("TAG","123456");
+        handler.postDelayed(runnable,5000);
+    }
 
 
+
+    //viewpager初始化
     private void setImage() {
         tips = new AppCompatImageView[imgIdArray.length];
         for (int i = 0; i < tips.length; i++) {
@@ -133,13 +145,20 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.main_top_search: {
                 Intent in = new Intent(getActivity(), SearchActivity.class);
+                int location[] = new int[2];
+                v.getLocationOnScreen(location);
+                in.putExtra("x",location[0]);
+                in.putExtra("y",location[1]);
                 startActivity(in);
+                ((Activity) getActivity()).overridePendingTransition(0,0);
                 break;
             }
 
         }
 
     }
+
+
 
 
     /**

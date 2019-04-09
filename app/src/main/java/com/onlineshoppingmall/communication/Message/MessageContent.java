@@ -1,7 +1,9 @@
 package com.onlineshoppingmall.communication.Message;
 
+import com.onlineshoppingmall.MyApplication;
 import com.onlineshoppingmall.until.CircleImageView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,14 +43,14 @@ public class MessageContent {
 
     private static MessageItem createDummyItem(int position) {
         return new MessageItem(
-                "http://192.168.43.24:8080/osm/2.jpeg",
-                "陈扬蟹黄汤包", "蟹黄汤包好好吃！蟹黄汤包好好吃！蟹黄汤包好好吃！蟹黄汤包好好吃！","12:00","1");
+                MyApplication.getHost() + "good/image?id=" + position,
+                "陈扬蟹黄汤包", "蟹黄汤包好好吃！蟹黄汤包好好吃！蟹黄汤包好好吃！蟹黄汤包好好吃！", "12:00", "1");
     }
 
     /**
      * A dummy item representing a piece of content.
      */
-    public static class MessageItem {
+    public static class MessageItem implements Serializable {
 
         public final String avatar;
         public final String shop;
@@ -56,7 +58,7 @@ public class MessageContent {
         public final String time;
         public final String msg_num;
 
-        public MessageItem(String  avatar, String shop, String content, String time, String msg_num) {
+        public MessageItem(String avatar, String shop, String content, String time, String msg_num) {
             this.avatar = avatar;
             this.shop = shop;
             this.content = content;

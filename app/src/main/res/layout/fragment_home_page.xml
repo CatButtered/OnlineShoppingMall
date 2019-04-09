@@ -2,6 +2,7 @@
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -21,7 +22,8 @@
             android:drawableTop="@drawable/main_sao1"
             android:text="扫一扫"
             android:textColor="@color/white"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/main_top_search"
@@ -41,7 +43,8 @@
             android:drawableTop="@drawable/main_region1"
             android:text="地 区"
             android:textColor="@color/white"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/main_top_vip"
@@ -55,7 +58,8 @@
             android:drawableTop="@drawable/main_vip1"
             android:text="会员码"
             android:textColor="@color/white"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            style="?android:attr/borderlessButtonStyle"/>
     </android.support.v7.widget.LinearLayoutCompat>
 
 
@@ -88,10 +92,16 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal" />
             </RelativeLayout>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdge="horizontal"
+                android:layout_gravity="center"
+                android:scrollbars="none">
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="160dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:orientation="vertical">
@@ -103,9 +113,8 @@
                     android:orientation="horizontal">
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -122,13 +131,14 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:text="生活超市" />
+                            android:text="生活超市"
+                            android:layout_marginBottom="2dp"/>
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -149,9 +159,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -172,9 +181,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -195,9 +203,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -216,6 +223,27 @@
                             android:layout_weight="1"
                             android:text="分润商城" />
                     </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.onlineshoppingmall.until.CircleImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:layout_weight="3"
+                            android:src="@drawable/main_logo11" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="OSM专营" />
+                    </android.support.v7.widget.LinearLayoutCompat>
 
 
                 </android.support.v7.widget.LinearLayoutCompat>
@@ -227,9 +255,8 @@
                     android:orientation="horizontal">
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -250,9 +277,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -273,9 +299,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -296,9 +321,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -319,9 +343,8 @@
                     </android.support.v7.widget.LinearLayoutCompat>
 
                     <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -343,6 +366,8 @@
 
                 </android.support.v7.widget.LinearLayoutCompat>
             </android.support.v7.widget.LinearLayoutCompat>
+
+            </HorizontalScrollView>
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -377,25 +402,84 @@
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo1"
+                                android:text="夕夕抢购"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="限时限量抢半价"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods1"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods2"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
-                        android:background="@color/textPrimary" />
+                        android:background="@color/bordercolor" />
 
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1" >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo2"
+                                android:text="夕夕视频"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="亲测什么好买"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods3"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods4"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
                 </android.support.v7.widget.LinearLayoutCompat>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/textPrimary" />
+                    android:background="@color/bordercolor" />
 
                 <android.support.v7.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -405,25 +489,83 @@
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1" >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo3"
+                                android:text="夕夕好店"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="神店挖掘机"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods5"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods6"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
-                        android:background="@color/textPrimary" />
+                        android:background="@color/bordercolor" />
 
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1" >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo4"
+                                android:text="夕夕特卖"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="9.9包邮特划算"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods7"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods8"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
                 </android.support.v7.widget.LinearLayoutCompat>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/textPrimary" />
+                    android:background="@color/bordercolor" />
 
                 <android.support.v7.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -433,18 +575,76 @@
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1" >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo5"
+                                android:text="夕夕直播"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="越买越开心"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods9"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods10"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
-                        android:background="@color/textPrimary" />
+                        android:background="@color/bordercolor" />
 
                     <android.support.v7.widget.LinearLayoutCompat
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_weight="1" >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/main_little_logo6"
+                                android:text="夕夕好货"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="只给精致的你"
+                                android:textSize="10dp"
+                                android:layout_margin="2dp"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/main_goods11"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/main_goods12"/>
+                    </android.support.v7.widget.LinearLayoutCompat>
                 </android.support.v7.widget.LinearLayoutCompat>
 
 

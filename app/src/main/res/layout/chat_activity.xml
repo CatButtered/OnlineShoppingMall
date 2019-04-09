@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".communication.ChatActivity">
+
+    <!--<android.support.v7.widget.AppCompatTextView-->
+    <!--android:id="@+id/record"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="@dimen/leave_blank"-->
+    <!--android:layout_marginEnd="@dimen/leave_blank"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/recyclerView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginStart="@dimen/leave_blank"-->
+        <!--android:layout_marginEnd="@dimen/leave_blank"-->
+        <!--app:layout_constraintHeight_percent="0.9"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/leave_blank"
+        android:layout_marginEnd="@dimen/leave_blank"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<android.support.v7.widget.LinearLayoutCompat-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:layout_constraintHeight_percent="0.9"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+    <!--</android.support.v7.widget.LinearLayoutCompat>-->
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/input"
+        style="@style/InputBoxStyle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/send"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="@dimen/grid"
+        android:background="@drawable/button_primary"
+        android:paddingStart="@dimen/grid"
+        android:paddingEnd="@dimen/grid"
+        android:text="发送"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/input"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

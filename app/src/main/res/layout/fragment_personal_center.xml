@@ -6,15 +6,14 @@
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pc_bg_top"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/grid"
             android:layout_weight="1">
 
             <com.onlineshoppingmall.until.CircleImageView
@@ -22,7 +21,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="@dimen/leave_blank"
-                android:background="@color/colorPrimary"
+                android:background="@color/transparent"
                 android:src="@drawable/portrait" />
 
             <android.support.v7.widget.AppCompatTextView
@@ -32,7 +31,8 @@
                 android:layout_toEndOf="@+id/portrait"
                 android:text="如此陌生灬"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="@dimen/appbar_text"
+                android:textStyle="bold" />
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
@@ -52,16 +52,19 @@
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/leave_blank"
+                android:layout_marginBottom="@dimen/leave_blank"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/grid"
                     android:gravity="center"
                     android:text="52"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
@@ -69,22 +72,25 @@
                     android:gravity="center"
                     android:text="收藏夹"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
             </android.support.v7.widget.LinearLayoutCompat>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/leave_blank"
+                android:layout_marginBottom="@dimen/leave_blank"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/grid"
                     android:gravity="center"
                     android:text="13"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -92,55 +98,34 @@
                     android:gravity="center"
                     android:text="关注店铺"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/leave_blank"
+                android:layout_marginBottom="@dimen/leave_blank"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/grid"
                     android:gravity="center"
                     android:text="230"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="足迹"
+                    android:text="地址"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="红包"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
 
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.LinearLayoutCompat>
@@ -148,31 +133,31 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/leave_blank"
+        android:layout_marginRight="@dimen/leave_blank"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/leave_blank"
             android:background="@drawable/shape_corner"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/grid">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="@dimen/grid"
                     android:text="我的订单"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/main_text"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -180,7 +165,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toStartOf="@id/arrow_right"
                     android:text="查看全部订单"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <ImageView
                     android:id="@+id/arrow_right"
@@ -188,67 +173,71 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="@dimen/grid"
                     android:src="@drawable/arrow_right" />
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp">
+                android:layout_marginTop="@dimen/grid">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/obligation"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="待付款"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/waiting_send"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="待发货"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/waiting_receive"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="待收货"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/evaluate"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="评价"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/after_sale"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="售后"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/leave_blank"
             android:background="@drawable/shape_corner"
             android:orientation="vertical"
             android:paddingTop="10dp"
@@ -257,44 +246,48 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginTop="@dimen/leave_blank"
+                android:layout_marginBottom="@dimen/leave_blank">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/service"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="我的客服"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/theme"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="主题"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/feedback"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="帮助中心"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/recommend"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="我的资产"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
             </LinearLayout>
 
@@ -309,36 +302,40 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/animal"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="野生动物"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ticket"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="京夕优惠"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/red_packet"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="我的红包"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/suggestion"
+                    android:drawablePadding="@dimen/grid"
                     android:gravity="center"
                     android:text="个人中心"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/small_word_prompt" />
 
             </LinearLayout>
         </LinearLayout>
@@ -348,11 +345,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/leave_blank"
         android:layout_marginTop="@dimen/leave_blank"
-        android:layout_marginRight="16dp"
-        android:layout_weight="1.5"
+        android:layout_marginRight="@dimen/leave_blank"
         android:background="@drawable/shape_corner">
 
         <TextView
@@ -361,7 +357,7 @@
             android:layout_centerInParent="true"
             android:drawableStart="@drawable/add"
             android:text="添加我的名片"
-            android:textSize="25dp" />
+            android:textSize="@dimen/appbar_text" />
 
 
     </RelativeLayout>

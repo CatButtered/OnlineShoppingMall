@@ -1,18 +1,16 @@
 package com.onlineshoppingmall;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
-import com.android.volley.RequestQueue;
 import com.onlineshoppingmall.communication.Message.MessageContent;
 import com.onlineshoppingmall.communication.MessageFragment;
 import com.onlineshoppingmall.communication.MessagePageFragment;
 import com.onlineshoppingmall.home.HomePageFragment;
-import com.onlineshoppingmall.until.MainViewModel;
+import com.onlineshoppingmall.penson.PersonalCenterFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +30,11 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
         viewPager = findViewById(R.id.vp_main);
         radioGroup = findViewById(R.id.rd_group);
         fragments = new ArrayList<>();
-        HomePageFragment homePageFragment = new HomePageFragment();
+//        HomePageFragment homePageFragment = new HomePageFragment();
         MessagePageFragment messagePageFragment = new MessagePageFragment();
         ShoppingCartPageFragment shoppingCartPageFragment = new ShoppingCartPageFragment();
         PersonalCenterFragment personalCenterFragment = new PersonalCenterFragment();
-        fragments.add(homePageFragment);
+//        fragments.add(homePageFragment);
         fragments.add(messagePageFragment);
         fragments.add(shoppingCartPageFragment);
         fragments.add(personalCenterFragment);
