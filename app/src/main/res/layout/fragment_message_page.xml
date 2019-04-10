@@ -22,7 +22,7 @@
         android:layout_margin="@dimen/leave_blank"
         android:text="消息"
         android:textColor="@color/white"
-        android:textSize="@dimen/Headline"
+        android:textSize="@dimen/subtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
         android:layout_margin="@dimen/leave_blank"
         android:text="没有未读消息"
         android:textColor="@color/white"
-        android:textSize="@dimen/appbar_text"
+        android:textSize="@dimen/main_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_message" />
 
@@ -60,7 +60,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="114dp"
+        android:layout_height="102dp"
         android:layout_margin="@dimen/leave_blank"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -80,8 +80,8 @@
 
                 <com.onlineshoppingmall.until.CircleImageView
                     android:id="@+id/_msg_logistics"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/leave_blank"
                     android:src="@drawable/msg_logistics"
@@ -94,7 +94,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/leave_blank"
-                    android:text="交易物流" />
+                    android:text="交易物流"
+                    android:textSize="@dimen/small_word_prompt"/>
 
             </android.support.v7.widget.LinearLayoutCompat>
 
@@ -107,8 +108,8 @@
 
                 <com.onlineshoppingmall.until.CircleImageView
                     android:id="@+id/_msg_notice"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/leave_blank"
                     android:src="@drawable/msg_notice"
@@ -121,7 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/leave_blank"
-                    android:text="通知消息" />
+                    android:text="通知消息"
+                    android:textSize="@dimen/small_word_prompt"/>
 
             </android.support.v7.widget.LinearLayoutCompat>
 
@@ -134,8 +136,8 @@
 
                 <com.onlineshoppingmall.until.CircleImageView
                     android:id="@+id/_msg_msg"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/leave_blank"
                     android:src="@drawable/msg_msg"
@@ -148,7 +150,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/leave_blank"
-                    android:text="互动消息" />
+                    android:text="互动消息"
+                    android:textSize="@dimen/small_word_prompt"/>
 
             </android.support.v7.widget.LinearLayoutCompat>
 
@@ -166,7 +169,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card"
         app:layout_constraintVertical_bias="0.0"
-        tools:context=".communication.PageList.MessageFragment"
+        tools:context=".communication.MessageFragment"
         tools:layout_editor_absoluteX="16dp"
         tools:listitem="@layout/fragment_message" />
 

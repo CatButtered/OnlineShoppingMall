@@ -12,7 +12,7 @@
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintHeight_percent="0.94"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
@@ -22,50 +22,54 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.1">
+        app:layout_constraintHeight_percent="0.06">
 
         <RadioButton
             android:id="@+id/rd_homepage"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/picture_rd1"
             android:gravity="center"
             android:text="首页"
+            android:textSize="8sp"
             android:textColor="@drawable/my_text_color" />
 
         <RadioButton
             android:id="@+id/rd_message"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/picture_rd2"
             android:gravity="center"
             android:text="消息"
+            android:textSize="8sp"
             android:textColor="@drawable/my_text_color" />
 
         <RadioButton
             android:id="@+id/rd_shoppingcart"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/picture_rd3"
             android:gravity="center"
             android:text="购物车"
+            android:textSize="8sp"
             android:textColor="@drawable/my_text_color" />
 
         <RadioButton
             android:id="@+id/rd_personcenter"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/picture_rd4"
             android:gravity="center"
             android:text="我的"
+            android:textSize="8sp"
             android:textColor="@drawable/my_text_color" />
 
     </RadioGroup>

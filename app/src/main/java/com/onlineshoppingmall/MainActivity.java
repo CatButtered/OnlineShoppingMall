@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import com.onlineshoppingmall.communication.PageList.MessageContent;
 import com.onlineshoppingmall.communication.PageList.MessageFragment;
 import com.onlineshoppingmall.communication.MessagePageFragment;
+import com.onlineshoppingmall.home.HomePageFragment;
 import com.onlineshoppingmall.penson.PersonalCenterFragment;
 import com.onlineshoppingmall.shoppingcart.cart.GoodItemFragment;
 import com.onlineshoppingmall.shoppingcart.ShoppingCartPageFragment;
@@ -32,9 +33,8 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
         viewPager = findViewById(R.id.vp_main);
         radioGroup = findViewById(R.id.rd_group);
         fragments = new ArrayList<>();
-//        HomePageFragment homePageFragment = new HomePageFragment();
+        HomePageFragment homePageFragment = new HomePageFragment();
         MessagePageFragment messagePageFragment = new MessagePageFragment();
-        MessagePageFragment homePageFragment = new MessagePageFragment();
         ShoppingCartPageFragment shoppingCartPageFragment = new ShoppingCartPageFragment();
         PersonalCenterFragment personalCenterFragment = new PersonalCenterFragment();
         fragments.add(homePageFragment);

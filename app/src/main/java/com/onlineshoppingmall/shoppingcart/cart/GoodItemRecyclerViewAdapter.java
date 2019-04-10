@@ -43,7 +43,7 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.select.setSelected(mValues.get(position).selected);
+        holder.select.setSelected(mValues.get(position).selected != 0);
         holder.amount.setText(String.valueOf(mValues.get(position).amount));
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,8 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
             public void onResponse(String s) {
                 holder.rItem = MyApplication.getGson().fromJson(s, Good.class);
 
-                MyRequest.setBitmap(holder.mView.getContext(), holder.image, holder.rItem.getId());
+                String _url = MyApplication.getHost() + "img/goods/" + holder.rItem.getId() + ".jpg";
+                MyRequest.setBitmap(holder.mView.getContext(), holder.image, _url);
                 holder.name.setText(holder.rItem.getName());
                 holder.price.setText("￥" + holder.rItem.getPrice());
             }

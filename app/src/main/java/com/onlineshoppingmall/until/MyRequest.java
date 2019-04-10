@@ -33,11 +33,14 @@ public class MyRequest {
     }
 
     public static void setBitmap(Context context, ImageView view, String url) {
-        Glide.with(context).load(url).into(view);
+        Glide.with(context).load(url).placeholder(R.drawable.msg_loading)
+                .error(R.drawable.msg_failure).into(view);
     }
 
-    public static void setBitmap(Context context, ImageView view, int id) {
-        Glide.with(context).load(MyApplication.getHost() + "img/goods/" + id + ".jpg").into(view);
+    public static void setBitmap(Context context, ImageView view, Integer resourceId) {
+        Glide.with(context).load(resourceId)
+                .placeholder(R.drawable.msg_loading)
+                .error(R.drawable.msg_failure).into(view);
     }
 
     public static void volley_setBitmap(Context context, ImageView view, int id) {

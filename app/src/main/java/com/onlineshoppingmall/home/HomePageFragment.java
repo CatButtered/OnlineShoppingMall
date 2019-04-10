@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.onlineshoppingmall.MainActivity;
 import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.until.MyRequest;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,19 +36,19 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
     private int[] imgIdArray;
     private ViewGroup group;
 
-    Handler handler = new Handler(){
-      @Override
-        public void handleMessage(Message msg) {
-            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
-        }
-    };
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
-            autoplay();
-        }
-    };
+//    Handler handler = new Handler(){
+//      @Override
+//        public void handleMessage(Message msg) {
+//            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+//        }
+//    };
+//    Runnable runnable = new Runnable() {
+//        @Override
+//        public void run() {
+//            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+//            autoplay();
+//        }
+//    };
 
     public HomePageFragment() {
         // Required empty public constructor
@@ -65,39 +66,34 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         viewPager = (ViewPager) v.findViewById(R.id.main_viewpager);
 
         //载入图片资源id
-        imgIdArray = new int[]{R.drawable.main_img01, R.drawable.main_img02, R.drawable.main_img03, R.drawable.main_img04, R.drawable.main_img05};
+        imgIdArray = new int[]{R.drawable.home_img01, R.drawable.home_img02, R.drawable.home_img03, R.drawable.home_img04, R.drawable.home_img05};
         //将点点加入到viewGroup中
         setImage();
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                setImageBackground(i % AppCompatImageViews.length);
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-
-
-            }
-        }); autoplay();
-
-
-
-
+//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int i, float v, int i1) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int i) {
+//                setImageBackground(i % AppCompatImageViews.length);
+//
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int i) {
+//
+//
+//            }
+//        }); autoplay();
         return v;
     }
     //实现自动播放
-    public void autoplay(){
-        Log.i("TAG","123456");
-        handler.postDelayed(runnable,5000);
-    }
-
+//    public void autoplay(){
+//        Log.i("TAG","123456");
+//        handler.postDelayed(runnable,5000);
+//    }
 
 
     //viewpager初始化
@@ -108,9 +104,11 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
             AppCompatImageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
             tips[i] = AppCompatImageView;
             if (i == 0) {
-                tips[i].setBackgroundResource(R.drawable.main_pot1);
+//                tips[i].setBackgroundResource(R.drawable.home_pot1);
+                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot1);
             } else {
-                tips[i].setBackgroundResource(R.drawable.main_pot2);
+//                tips[i].setBackgroundResource(R.drawable.home_pot2);
+                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot2);
             }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             layoutParams.leftMargin = 1;
@@ -123,8 +121,8 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         for (int i = 0; i < AppCompatImageViews.length; i++) {
             AppCompatImageView AppCompatImageView = new AppCompatImageView(getContext());
             AppCompatImageViews[i] = AppCompatImageView;
-            AppCompatImageView.setBackgroundResource(imgIdArray[i]);
-
+//            AppCompatImageView.setBackgroundResource(imgIdArray[i]);
+            MyRequest.setBitmap(this.getContext(), AppCompatImageView, imgIdArray[i]);
         }
         //设置Adapter
         viewPager.setAdapter(new MyAdapter(AppCompatImageViews));
@@ -144,10 +142,10 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
                 Intent in = new Intent(getActivity(), SearchActivity.class);
                 int location[] = new int[2];
                 v.getLocationOnScreen(location);
-                in.putExtra("x",location[0]);
-                in.putExtra("y",location[1]);
+                in.putExtra("x", location[0]);
+                in.putExtra("y", location[1]);
                 startActivity(in);
-                ((Activity) getActivity()).overridePendingTransition(0,0);
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
                 break;
             }
 
@@ -163,9 +161,9 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
     private void setImageBackground(int selectItems) {
         for (int i = 0; i < tips.length; i++) {
             if (i == selectItems) {
-                tips[i].setBackgroundResource(R.drawable.main_pot1);
+                tips[i].setBackgroundResource(R.drawable.home_pot1);
             } else {
-                tips[i].setBackgroundResource(R.drawable.main_pot2);
+                tips[i].setBackgroundResource(R.drawable.home_pot2);
             }
         }
     }
