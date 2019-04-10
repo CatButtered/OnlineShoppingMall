@@ -1,10 +1,9 @@
-package com.onlineshoppingmall.communication;
+package com.onlineshoppingmall.communication.ChatList;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.onlineshoppingmall.R;
-import com.onlineshoppingmall.communication.ui.chat.ChatFragment;
 
 public class ChatActivity extends AppCompatActivity {
 

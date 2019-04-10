@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/search_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="@dimen/leave_blank"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/colorPrimary" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/search_good_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid"
+        android:layout_marginEnd="@dimen/leave_blank"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_image"
+        app:layout_constraintTop_toTopOf="@id/search_image"
+        tools:text="好好好好好好好好好好好好好好好好好好好好好好" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/search_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/subtitle"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/search_image"
+        app:layout_constraintStart_toEndOf="@id/search_image"
+        tools:text="￥139" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/search_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/main_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/search_price"
+        app:layout_constraintEnd_toStartOf="@id/search_into_cart"
+        app:layout_constraintStart_toEndOf="@id/search_price"
+        app:layout_constraintTop_toTopOf="@+id/search_price"
+        tools:text="数量：56" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/search_into_cart"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="@dimen/leave_blank"
+        android:background="@drawable/rd_d3_b"
+        app:layout_constraintBottom_toBottomOf="@id/search_image"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

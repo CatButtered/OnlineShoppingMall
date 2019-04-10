@@ -10,11 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.communication.PageList.MessageFragment;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 
 public class MessagePageFragment extends Fragment {
 
@@ -27,14 +24,11 @@ public class MessagePageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_message_page, container, false);
-
-
 
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(R.id.list, MessageFragment.newInstance(1));
+        transaction.add(R.id.msg_page_list, MessageFragment.newInstance(1));
         transaction.commit();
         return view;
     }

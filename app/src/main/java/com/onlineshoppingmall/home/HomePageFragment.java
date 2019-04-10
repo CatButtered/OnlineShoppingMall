@@ -35,7 +35,6 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
     private int[] imgIdArray;
     private ViewGroup group;
 
-
     Handler handler = new Handler(){
       @Override
         public void handleMessage(Message msg) {
@@ -50,11 +49,9 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         }
     };
 
-
     public HomePageFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -157,9 +154,6 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         }
 
     }
-
-
-
 
     /**
      * 设置选中的tip的背景

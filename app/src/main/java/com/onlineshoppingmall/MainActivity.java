@@ -6,16 +6,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
-import com.onlineshoppingmall.communication.Message.MessageContent;
-import com.onlineshoppingmall.communication.MessageFragment;
+import com.onlineshoppingmall.communication.PageList.MessageContent;
+import com.onlineshoppingmall.communication.PageList.MessageFragment;
 import com.onlineshoppingmall.communication.MessagePageFragment;
-import com.onlineshoppingmall.home.HomePageFragment;
 import com.onlineshoppingmall.penson.PersonalCenterFragment;
+import com.onlineshoppingmall.shoppingcart.cart.GoodItemFragment;
+import com.onlineshoppingmall.shoppingcart.ShoppingCartPageFragment;
+import com.onlineshoppingmall.shoppingcart.cart.GoodContent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MessageFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MessageFragment.OnListFragmentInteractionListener, GoodItemFragment.OnListFragmentInteractionListener {
     private static final String TAG = "MainActivity";
     private ViewPager viewPager;
     private RadioGroup radioGroup;
@@ -32,9 +34,10 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
         fragments = new ArrayList<>();
 //        HomePageFragment homePageFragment = new HomePageFragment();
         MessagePageFragment messagePageFragment = new MessagePageFragment();
+        MessagePageFragment homePageFragment = new MessagePageFragment();
         ShoppingCartPageFragment shoppingCartPageFragment = new ShoppingCartPageFragment();
         PersonalCenterFragment personalCenterFragment = new PersonalCenterFragment();
-//        fragments.add(homePageFragment);
+        fragments.add(homePageFragment);
         fragments.add(messagePageFragment);
         fragments.add(shoppingCartPageFragment);
         fragments.add(personalCenterFragment);
@@ -64,11 +67,16 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
 
             }
         });
-        radioGroup.check(rbs[1]);
+        radioGroup.check(rbs[2]);
     }
 
     @Override
     public void onListFragmentInteraction(MessageContent.MessageItem item) {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(GoodContent.GoodItem item) {
 
     }
 }

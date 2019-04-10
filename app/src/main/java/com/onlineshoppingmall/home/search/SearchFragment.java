@@ -1,4 +1,4 @@
-package com.onlineshoppingmall.communication;
+package com.onlineshoppingmall.home.search;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.onlineshoppingmall.R;
-import com.onlineshoppingmall.communication.Message.MessageContent;
-import com.onlineshoppingmall.communication.Message.MessageContent.MessageItem;
+import com.onlineshoppingmall.home.search.SearchContent.SearchItem;
 
 /**
  * A fragment representing a list of Items.
@@ -20,7 +19,7 @@ import com.onlineshoppingmall.communication.Message.MessageContent.MessageItem;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class MessageFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -32,13 +31,13 @@ public class MessageFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public MessageFragment() {
+    public SearchFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static MessageFragment newInstance(int columnCount) {
-        MessageFragment fragment = new MessageFragment();
+    public static SearchFragment newInstance(int columnCount) {
+        SearchFragment fragment = new SearchFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -57,7 +56,7 @@ public class MessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_message_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_searchitem_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -68,7 +67,7 @@ public class MessageFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MessageRecyclerViewAdapter(MessageContent.ITEMS, mListener));
+            recyclerView.setAdapter(new SearchRecyclerViewAdapter(SearchContent.ITEMS, mListener));
         }
         return view;
     }
@@ -103,6 +102,6 @@ public class MessageFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(MessageItem item);
+        void onListFragmentInteraction(SearchItem item);
     }
 }

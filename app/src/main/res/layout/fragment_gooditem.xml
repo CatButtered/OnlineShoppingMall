@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/leave_blank"
+    android:orientation="horizontal">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/cart_good_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/cart_good_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/grid"
+            android:layout_marginTop="@dimen/leave_blank"
+            android:layout_marginBottom="@dimen/leave_blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cart_good_selected"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/colorAccent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/cart_good_name"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cart_good_image"
+            app:layout_constraintTop_toTopOf="@id/cart_good_image"
+            tools:text="好好好好好好好好好好好好好好好好好好好好好好" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/cart_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/subtitle"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/cart_good_image"
+            app:layout_constraintStart_toEndOf="@id/cart_good_image"
+            tools:text="￥139" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/cart_amount_sub"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/cart_sub"
+            app:layout_constraintBottom_toBottomOf="@+id/cart_amount_add"
+            app:layout_constraintEnd_toStartOf="@id/cart_amount"
+            app:layout_constraintTop_toTopOf="@+id/cart_amount_add" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/cart_amount"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:textSize="@dimen/main_text"
+            app:layout_constraintBottom_toBottomOf="@+id/cart_amount_add"
+            app:layout_constraintEnd_toStartOf="@id/cart_amount_add"
+            app:layout_constraintTop_toTopOf="@+id/cart_amount_add"
+            tools:text="1" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/cart_amount_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="@dimen/grid"
+            android:background="@drawable/cart_add"
+            app:layout_constraintBottom_toBottomOf="@id/cart_good_image"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>

@@ -1,4 +1,4 @@
-package com.onlineshoppingmall.communication.ui.chat;
+package com.onlineshoppingmall.communication.ChatList;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;

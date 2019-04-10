@@ -1,4 +1,4 @@
-package com.onlineshoppingmall.communication;
+package com.onlineshoppingmall.communication.PageList;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -11,14 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.onlineshoppingmall.MainActivity;
-import com.onlineshoppingmall.MyApplication;
 import com.onlineshoppingmall.R;
-import com.onlineshoppingmall.communication.Message.MessageContent.MessageItem;
-import com.onlineshoppingmall.communication.MessageFragment.OnListFragmentInteractionListener;
-import com.onlineshoppingmall.until.BitmapCache;
+import com.onlineshoppingmall.communication.ChatList.ChatActivity;
+import com.onlineshoppingmall.communication.PageList.MessageContent.MessageItem;
+import com.onlineshoppingmall.communication.PageList.MessageFragment.OnListFragmentInteractionListener;
 import com.onlineshoppingmall.until.CircleImageView;
+import com.onlineshoppingmall.until.MyRequest;
 
 import java.util.List;
 
@@ -52,10 +50,7 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
-        ImageLoader.ImageListener listener = ImageLoader.getImageListener(holder.mAvatar,
-                R.drawable.msg_loading, R.drawable.msg_failure);
-        ImageLoader loader = new ImageLoader(MyApplication.getHttpQueue(), new BitmapCache());
-        loader.get(mValues.get(position).avatar, listener);
+        MyRequest.setBitmap(holder.mView.getContext(), holder.mAvatar, holder.mItem.avatar);
         holder.mShop.setText(mValues.get(position).shop);
         holder.mContent.setText(mValues.get(position).content);
         holder.mTime.setText(mValues.get(position).time);

@@ -1,4 +1,4 @@
-package com.onlineshoppingmall;
+package com.onlineshoppingmall.shoppingcart;
 
 
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.onlineshoppingmall.communication.MessageFragment;
+import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.shoppingcart.cart.GoodItemFragment;
 
 
 /**
@@ -27,7 +28,12 @@ public class ShoppingCartPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shopping_cart_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_shopping_cart_page, container, false);
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.cart_page_list, GoodItemFragment.newInstance(1));
+        transaction.commit();
+        return view;
     }
 
 }
