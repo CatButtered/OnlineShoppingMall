@@ -1,5 +1,7 @@
 package com.onlineshoppingmall.home.search;
 
+import com.onlineshoppingmall.remote_entity.Good;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,29 +9,16 @@ import java.util.Map;
 
 public class SearchContent {
 
-    public static final List<SearchItem> ITEMS = new ArrayList<SearchItem>();
+    private static List<Good> ITEMS = new ArrayList<>();
 
-    public static final Map<String, SearchItem> ITEM_MAP = new HashMap<String, SearchItem>();
+    public static List<Good> getITEMS() {
+        return ITEMS;
+    }
 
-    private static final int COUNT = 25;
-
-    static {
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
+    public static void setITEMS(List<Good> ITEMS) {
+        SearchContent.ITEMS.clear();
+        for (Good item : ITEMS) {
+            SearchContent.ITEMS.add(item);
         }
-    }
-
-    private static void addItem(SearchItem item) {
-        ITEMS.add(item);
-//        ITEM_MAP.put(item.id, item);
-    }
-
-    private static SearchItem createDummyItem(int position) {
-        return new SearchItem();
-    }
-
-    public static class SearchItem {
-
-
     }
 }

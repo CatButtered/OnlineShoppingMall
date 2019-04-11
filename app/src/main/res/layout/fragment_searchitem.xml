@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/grid"
         android:layout_marginEnd="@dimen/leave_blank"
+        android:ellipsize="end"
+        android:lines="2"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/search_image"

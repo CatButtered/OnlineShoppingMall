@@ -1,5 +1,7 @@
 package com.onlineshoppingmall.shoppingcart.cart;
 
+import com.onlineshoppingmall.remote_entity.Good;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,32 +9,50 @@ import java.util.Map;
 
 public class GoodContent {
 
-    public static final List<GoodItem> ITEMS = new ArrayList<GoodItem>();
+    private static List<GoodItem> ITEMS = new ArrayList<GoodItem>();
 
-    public static final Map<String, GoodItem> ITEM_MAP = new HashMap<String, GoodItem>();
+    private static Map<Integer, Good> cache = new HashMap<>();
 
-    private static final int COUNT = 25;
+    private static GoodItemRecyclerViewAdapter adapter = null;
 
-    static {
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
+    public static GoodItemRecyclerViewAdapter getAdapter() {
+        return adapter;
+    }
+
+    public static void setAdapter(GoodItemRecyclerViewAdapter adapter) {
+        GoodContent.adapter = adapter;
+    }
+
+    public static List<GoodItem> getITEMS() {
+        return ITEMS;
+    }
+
+    public static void setITEMS(List<GoodItem> ITEMS) {
+        GoodContent.ITEMS.clear();
+        for (GoodItem item : ITEMS) {
+            GoodContent.ITEMS.add(item);
         }
     }
 
-    private static void addItem(GoodItem item) {
-        ITEMS.add(item);
-        ITEM_MAP.put(String.valueOf(item.id), item);
+    public static Map<Integer, Good> getCache() {
+        return cache;
     }
 
-    private static GoodItem createDummyItem(int position) {
-        return new GoodItem(1, 1, 1, 1);
+    public static void setITEMSChecked(boolean isChecked) {
+        for (GoodItem item : ITEMS) {
+            if (isChecked) {
+                item.setSelected(1);
+            } else {
+                item.setSelected(0);
+            }
+        }
     }
 
     public static class GoodItem {
-        public int id;
-        public int gid;
-        public int selected;
-        public int amount;
+        private int id;
+        private int gid;
+        private int selected;
+        private int amount;
 
         public GoodItem() {
 
@@ -75,6 +95,16 @@ public class GoodContent {
 
         public void setAmount(int amount) {
             this.amount = amount;
+        }
+
+        @Override
+        public String toString() {
+            return "GoodItem{" +
+                    "id=" + id +
+                    ", gid=" + gid +
+                    ", selected=" + selected +
+                    ", amount=" + amount +
+                    '}';
         }
     }
 }

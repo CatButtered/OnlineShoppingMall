@@ -10,7 +10,13 @@ import com.onlineshoppingmall.communication.PageList.MessageContent;
 import com.onlineshoppingmall.communication.PageList.MessageFragment;
 import com.onlineshoppingmall.communication.MessagePageFragment;
 import com.onlineshoppingmall.home.HomePageFragment;
+import com.onlineshoppingmall.home.PageList.h.CircleIconFragment;
+import com.onlineshoppingmall.home.PageList.h.CircleItemContent;
+import com.onlineshoppingmall.home.PageList.v.GoodImagesFragment;
+import com.onlineshoppingmall.home.PageList.v.GoodsImagesContent;
+import com.onlineshoppingmall.home.search.SearchFragment;
 import com.onlineshoppingmall.penson.PersonalCenterFragment;
+import com.onlineshoppingmall.remote_entity.Good;
 import com.onlineshoppingmall.shoppingcart.cart.GoodItemFragment;
 import com.onlineshoppingmall.shoppingcart.ShoppingCartPageFragment;
 import com.onlineshoppingmall.shoppingcart.cart.GoodContent;
@@ -18,7 +24,9 @@ import com.onlineshoppingmall.shoppingcart.cart.GoodContent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MessageFragment.OnListFragmentInteractionListener, GoodItemFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MessageFragment.OnListFragmentInteractionListener,
+        GoodItemFragment.OnListFragmentInteractionListener, CircleIconFragment.OnListFragmentInteractionListener,
+        GoodImagesFragment.OnListFragmentInteractionListener {
     private static final String TAG = "MainActivity";
     private ViewPager viewPager;
     private RadioGroup radioGroup;
@@ -67,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
 
             }
         });
-        radioGroup.check(rbs[2]);
+        radioGroup.check(rbs[0]);
     }
 
     @Override
@@ -79,4 +87,15 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
     public void onListFragmentInteraction(GoodContent.GoodItem item) {
 
     }
+
+    @Override
+    public void onListFragmentInteraction(CircleItemContent.CircleItem item) {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(GoodsImagesContent.GoodsImagesItem item) {
+
+    }
+
 }

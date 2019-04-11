@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -14,6 +14,7 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/main_top_sao"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/grid"
@@ -22,8 +23,7 @@
             android:drawableTop="@drawable/home_sao"
             android:text="扫一扫"
             android:textColor="@color/white"
-            android:textSize="8sp"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textSize="8sp" />
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/main_top_search"
@@ -35,6 +35,7 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/main_top_region"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/grid"
@@ -43,21 +44,20 @@
             android:drawableTop="@drawable/home_region"
             android:text="地 区"
             android:textColor="@color/white"
-            android:textSize="8sp"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textSize="8sp" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/main_top_vip"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-           android:layout_margin="@dimen/grid"
+            android:layout_margin="@dimen/grid"
             android:layout_weight="0.8"
             android:background="@color/colorPrimary"
             android:drawableTop="@drawable/home_vip"
             android:text="会员码"
             android:textColor="@color/white"
-            android:textSize="8sp"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textSize="8sp" />
     </android.support.v7.widget.LinearLayoutCompat>
 
 
@@ -91,293 +91,15 @@
                     android:orientation="horizontal" />
             </RelativeLayout>
 
-            <HorizontalScrollView
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/home_page_list_h"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fadingEdge="horizontal"
-                android:layout_gravity="center"
-                android:scrollbars="none">
+                android:layout_marginStart="@dimen/leave_blank"
+                android:layout_marginTop="@dimen/leave_blank"
+                android:layout_marginEnd="@dimen/leave_blank"
+                app:layoutManager="android.support.v7.widget.GridLayoutManager" />
 
-            <!--<android.support.v7.widget.LinearLayoutCompat-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="180dp"-->
-                <!--android:layout_marginRight="16dp"-->
-                <!--android:layout_marginLeft="4dp"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<android.support.v7.widget.LinearLayoutCompat-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:orientation="horizontal">-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo1" />-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="生活超市"-->
-                            <!--android:textSize="@dimen/small_word_prompt"-->
-                           <!--/>-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo3" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="惠生活" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo4" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="美食" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo5" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="婴儿用品" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo2" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="分润商城" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo11" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="OSM专营" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-
-                <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                <!--<android.support.v7.widget.LinearLayoutCompat-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:orientation="horizontal">-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:gravity="center"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="@dimen/grid"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo6" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="特产" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="8dp"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo7" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="宠物花鸟" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="8dp"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo8" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="移动充值" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="8dp"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo9" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="E连商城" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                    <!--<android.support.v7.widget.LinearLayoutCompat-->
-                        <!--android:layout_width="80dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_margin="4dp"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<com.onlineshoppingmall.until.CircleImageView-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_margin="8dp"-->
-                            <!--android:layout_weight="3"-->
-                            <!--android:src="@drawable/home_logo10" />-->
-
-                        <!--<android.support.v7.widget.AppCompatTextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="0dp"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:text="叮咚网" />-->
-                    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-                <!--</android.support.v7.widget.LinearLayoutCompat>-->
-            <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-            </HorizontalScrollView>
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -398,267 +120,15 @@
 
                 </android.support.v7.widget.LinearLayoutCompat>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/textPrimary" />
-
                 <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/home_page_list_v"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:orientation="horizontal">
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo1"
-                                android:text="夕夕抢购"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="限时限量抢半价"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods1"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods2"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/bordercolor" />
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo2"
-                                android:text="夕夕视频"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="亲测什么好买"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods3"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods4"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-                </android.support.v7.widget.LinearLayoutCompat>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/bordercolor" />
-
-                <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:orientation="horizontal">
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo3"
-                                android:text="夕夕好店"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="神店挖掘机"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods5"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods6"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/bordercolor" />
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo4"
-                                android:text="夕夕特卖"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="9.9包邮特划算"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods7"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods8"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-                </android.support.v7.widget.LinearLayoutCompat>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/bordercolor" />
-
-                <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:orientation="horizontal">
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo5"
-                                android:text="夕夕直播"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="越买越开心"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods9"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods10"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/bordercolor" />
-
-                    <android.support.v7.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/home_little_logo6"
-                                android:text="夕夕好货"
-                                android:textColor="@color/black"
-                                android:layout_marginTop="5dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="只给精致的你"
-                                android:textSize="10dp"
-                                android:layout_margin="2dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/home_goods11"/>
-                        </LinearLayout>
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/home_goods12"/>
-                    </android.support.v7.widget.LinearLayoutCompat>
-                </android.support.v7.widget.LinearLayoutCompat>
-
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/leave_blank"
+                    app:layoutManager="android.support.v7.widget.GridLayoutManager" />
 
             </android.support.v7.widget.LinearLayoutCompat>
+
         </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
 

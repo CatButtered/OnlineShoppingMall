@@ -170,7 +170,6 @@
         app:layout_constraintTop_toBottomOf="@+id/card"
         app:layout_constraintVertical_bias="0.0"
         tools:context=".communication.MessageFragment"
-        tools:layout_editor_absoluteX="16dp"
         tools:listitem="@layout/fragment_message" />
 
 

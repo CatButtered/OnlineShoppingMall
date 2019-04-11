@@ -4,19 +4,19 @@ package com.onlineshoppingmall.home;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatImageView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.onlineshoppingmall.MainActivity;
 import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.home.PageList.h.CircleIconFragment;
+import com.onlineshoppingmall.home.PageList.v.GoodImagesFragment;
 import com.onlineshoppingmall.until.MyRequest;
 
 /**
@@ -69,6 +69,12 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         imgIdArray = new int[]{R.drawable.home_img01, R.drawable.home_img02, R.drawable.home_img03, R.drawable.home_img04, R.drawable.home_img05};
         //将点点加入到viewGroup中
         setImage();
+
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.home_page_list_h, CircleIconFragment.newInstance(2));
+        transaction.add(R.id.home_page_list_v, GoodImagesFragment.newInstance(2));
+        transaction.commit();
 //        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 //            @Override
 //            public void onPageScrolled(int i, float v, int i1) {

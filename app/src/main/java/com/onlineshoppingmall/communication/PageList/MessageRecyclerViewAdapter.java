@@ -51,7 +51,7 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         MyRequest.setBitmap(holder.mView.getContext(), holder.mAvatar, holder.mItem.avatar);
-        holder.mShop.setText(mValues.get(position).shop);
+        holder.mName.setText(mValues.get(position).name);
         holder.mContent.setText(mValues.get(position).content);
         holder.mTime.setText(mValues.get(position).time);
 
@@ -97,7 +97,7 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
         public final View mView;
         public MessageItem mItem;
         public CircleImageView mAvatar;
-        public AppCompatTextView mShop;
+        public AppCompatTextView mName;
         public AppCompatTextView mContent;
         public AppCompatTextView mTime;
         public View mMsg_num;
@@ -106,7 +106,7 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
             super(view);
             mView = view;
             mAvatar = view.findViewById(R.id.avatar);
-            mShop = view.findViewById(R.id.shop);
+            mName = view.findViewById(R.id.name);
             mContent = view.findViewById(R.id.content);
             mTime = view.findViewById(R.id.time);
             mMsg_num = view.findViewById(R.id.msg_num);

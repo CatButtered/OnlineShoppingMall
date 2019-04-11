@@ -7,10 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.onlineshoppingmall.shoppingcart.cart.GoodContent;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class GoodItemDao extends SQLiteOpenHelper {
@@ -32,7 +29,7 @@ public class GoodItemDao extends SQLiteOpenHelper {
 
     }
 
-    public void addGood(GoodContent.GoodItem item) throws ParseException {
+    public void addGood(GoodContent.GoodItem item) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         String add_sql = "insert into goods(gid,selected,amount)values(?,?,?)";
         sqLiteDatabase.execSQL(add_sql, new Object[]{item.getGid(), item.getSelected(), item.getAmount()});
@@ -72,6 +69,56 @@ public class GoodItemDao extends SQLiteOpenHelper {
         }
         sqLiteDatabase.close();
         return goodItems;
+    }
+
+    public GoodContent.GoodItem selectById(int id) {
+        List<GoodContent.GoodItem> goodItems = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String qu_sql = "select * from goods where id=" + id;
+        Cursor cursor = sqLiteDatabase.rawQuery(qu_sql, null);
+        while (cursor.moveToNext()) {
+            GoodContent.GoodItem item = new GoodContent.GoodItem();
+            int _id = cursor.getInt(cursor.getColumnIndex("id"));
+            int gid = cursor.getInt(cursor.getColumnIndex("gid"));
+            int selected = cursor.getInt(cursor.getColumnIndex("selected"));
+            int amount = cursor.getInt(cursor.getColumnIndex("amount"));
+            item.setId(_id);
+            item.setGid(gid);
+            item.setSelected(selected);
+            item.setAmount(amount);
+            goodItems.add(item);
+        }
+        sqLiteDatabase.close();
+        if (goodItems.size() == 1) {
+            return goodItems.get(0);
+        } else {
+            throw new RuntimeException("can't find good");
+        }
+    }
+
+    public GoodContent.GoodItem selectByGid(int gid) {
+        List<GoodContent.GoodItem> goodItems = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        String qu_sql = "select * from goods where gid=" + gid;
+        Cursor cursor = sqLiteDatabase.rawQuery(qu_sql, null);
+        while (cursor.moveToNext()) {
+            GoodContent.GoodItem item = new GoodContent.GoodItem();
+            int _id = cursor.getInt(cursor.getColumnIndex("id"));
+            int _gid = cursor.getInt(cursor.getColumnIndex("gid"));
+            int selected = cursor.getInt(cursor.getColumnIndex("selected"));
+            int amount = cursor.getInt(cursor.getColumnIndex("amount"));
+            item.setId(_id);
+            item.setGid(_gid);
+            item.setSelected(selected);
+            item.setAmount(amount);
+            goodItems.add(item);
+        }
+        sqLiteDatabase.close();
+        if (goodItems.size() == 1) {
+            return goodItems.get(0);
+        } else {
+            return null;
+        }
     }
 
 }

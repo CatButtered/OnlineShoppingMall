@@ -1,5 +1,6 @@
 package com.onlineshoppingmall.shoppingcart.cart;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,13 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.shoppingcart.Database.GoodItemDao;
 import com.onlineshoppingmall.shoppingcart.cart.GoodContent.GoodItem;
+import com.onlineshoppingmall.shoppingcart.cart.data.ModelViewModel;
 
 public class GoodItemFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+
+    private GoodItemDao dao;
 
     public GoodItemFragment() {
     }
@@ -45,6 +50,11 @@ public class GoodItemFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gooditem_list, container, false);
 
+        dao = new GoodItemDao(view.getContext(), 1);
+        GoodContent.setITEMS(dao.query());
+
+        ModelViewModel viewModel = ViewModelProviders.of(getActivity()).get(ModelViewModel.class);
+
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
@@ -53,7 +63,9 @@ public class GoodItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new GoodItemRecyclerViewAdapter(GoodContent.ITEMS, mListener));
+            GoodItemRecyclerViewAdapter adapter = new GoodItemRecyclerViewAdapter(GoodContent.getITEMS(), mListener, viewModel);
+            GoodContent.setAdapter(adapter);
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }

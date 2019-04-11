@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/home_page_v_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/home_page_v_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/grid"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/home_page_v_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableStart="@drawable/home_little_logo1"
+        tools:text="夕夕抢购" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/home_page_v_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/grid"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/home_page_v_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_v_title"
+        tools:text="限时限量抢半价" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/home_page_v_good1"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@id/home_page_v_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_v_introduction"
+        tools:src="@drawable/home_goods1" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/home_page_v_good2"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/home_page_v_guide"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/home_goods2" />
+
+</android.support.constraint.ConstraintLayout>

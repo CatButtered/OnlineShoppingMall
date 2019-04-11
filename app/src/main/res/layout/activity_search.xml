@@ -15,11 +15,11 @@
             android:id="@+id/home_search_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/home_search_ed_bg"
-            app:layout_constraintBottom_toBottomOf="@+id/home_search_ed_bg"
             android:layout_margin="@dimen/leave_blank"
             android:src="@drawable/home_search_return"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/home_search_ed_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_search_ed_bg" />
 
         <View
             android:id="@+id/home_search_ed_bg"
@@ -29,49 +29,47 @@
             android:layout_margin="@dimen/leave_blank"
             android:background="@drawable/home_search_bg"
             android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/home_search_top_bg"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/home_search_ed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/home_search_ed_bg"
-            app:layout_constraintEnd_toEndOf="@id/home_search_ed_bg"
-            app:layout_constraintTop_toTopOf="@+id/home_search_ed_bg"
-            app:layout_constraintBottom_toBottomOf="@+id/home_search_ed_bg"
             android:layout_gravity="center"
             android:background="@color/white"
             android:drawableLeft="@drawable/home_search_btn"
             android:hint="请输入搜索内容"
             android:textColor="@color/textPrimary"
-            android:textSize="@dimen/main_text" />
+            android:textSize="@dimen/main_text"
+            app:layout_constraintBottom_toBottomOf="@+id/home_search_ed_bg"
+            app:layout_constraintEnd_toEndOf="@id/home_search_ed_bg"
+            app:layout_constraintStart_toStartOf="@id/home_search_ed_bg"
+            app:layout_constraintTop_toTopOf="@+id/home_search_ed_bg" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/home_search_btn"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_margin="@dimen/leave_blank"
             android:background="@drawable/shape_btn"
-            app:layout_constraintBaseline_toBaselineOf="@+id/home_search_ed"
             android:gravity="center"
             android:text="搜索"
             android:textColor="@color/white"
             android:textSize="@dimen/main_text"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/home_search_ed"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/home_search_content_bg"
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/search_list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#fff"
-        android:orientation="horizontal">
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/leave_blank"
+        app:layoutManager="LinearLayoutManager" />
 </LinearLayout>
 

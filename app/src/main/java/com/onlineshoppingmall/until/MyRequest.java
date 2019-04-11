@@ -1,7 +1,6 @@
 package com.onlineshoppingmall.until;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 import com.android.volley.Request;
@@ -37,13 +36,20 @@ public class MyRequest {
                 .error(R.drawable.msg_failure).into(view);
     }
 
+    public static void setGoodImg(Context context, ImageView view, int id) {
+        String url = MyApplication.getHost() + "good/image?id=" + id;
+        Glide.with(context).load(url)
+                .placeholder(R.drawable.msg_loading)
+                .error(R.drawable.msg_failure).into(view);
+    }
+
     public static void setBitmap(Context context, ImageView view, Integer resourceId) {
         Glide.with(context).load(resourceId)
                 .placeholder(R.drawable.msg_loading)
                 .error(R.drawable.msg_failure).into(view);
     }
 
-    public static void volley_setBitmap(Context context, ImageView view, int id) {
+    private static void volley_setBitmap(Context context, ImageView view, int id) {
         RequestQueue queue = MyApplication.getHttpQueue();
         ImageLoader.ImageListener listener = ImageLoader.getImageListener(view,
                 R.drawable.msg_loading, R.drawable.msg_failure);
@@ -52,7 +58,7 @@ public class MyRequest {
                 listener, view.getWidth(), view.getHeight());
     }
 
-    private void volley_Get(final OnGet onGet, String url) {
+    public static void volley_Get(final OnGet onGet, String url) {
         RequestQueue queue = MyApplication.getHttpQueue();
         String _url = MyApplication.getHost() + url;
         StringRequest request = new StringRequest(Request.Method.GET, _url, new Response.Listener<String>() {
@@ -63,13 +69,14 @@ public class MyRequest {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
                 onGet.onFailure();
             }
         });
         queue.add(request);
     }
 
-    private void volley_Post(final OnPost onPost, String url) {
+    public static void volley_Post(final OnPost onPost, String url) {
         RequestQueue queue = MyApplication.getHttpQueue();
         String _url = MyApplication.getHost() + url;
         StringRequest request = new StringRequest(Request.Method.POST, _url, new Response.Listener<String>() {
@@ -79,7 +86,8 @@ public class MyRequest {
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError volleyError) {
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
                 onPost.onFailure();
             }
         }) {

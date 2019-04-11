@@ -17,10 +17,11 @@
         tools:src="@drawable/waiting_receive" />
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/shop"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/leave_blank"
+        android:textColor="@color/black"
         android:textSize="@dimen/subtitle"
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar"
@@ -33,7 +34,7 @@
         android:layout_marginEnd="@dimen/leave_blank"
         android:textSize="@dimen/subtitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shop"
+        app:layout_constraintTop_toTopOf="@+id/name"
         tools:text="13:56" />
 
     <android.support.v7.widget.AppCompatTextView
@@ -45,7 +46,7 @@
         android:ellipsize="end"
         android:lines="1"
         app:layout_constraintStart_toEndOf="@id/avatar"
-        app:layout_constraintTop_toBottomOf="@+id/shop"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         tools:text="陈扬蟹黄汤包陈扬蟹黄汤包陈扬蟹黄汤包陈扬蟹黄汤包" />
 
     <View

@@ -11,11 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.AppCompatRadioButton
+        <android.support.v7.widget.AppCompatCheckBox
             android:id="@+id/cart_good_selected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/grid"
+            android:background="@drawable/checkbox_change"
+            android:button="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +38,8 @@
             android:id="@+id/cart_good_name"
             android:layout_width="235dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="2"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cart_good_image"
