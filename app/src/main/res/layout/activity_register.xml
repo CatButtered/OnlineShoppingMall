@@ -10,8 +10,8 @@
     android:orientation="vertical">
 
     <!--<include-->
-        <!--android:id="@+id/ly_retrieve_bar"-->
-        <!--layout="@layout/activity_main_login_navigation_bar" />-->
+    <!--android:id="@+id/ly_retrieve_bar"-->
+    <!--layout="@layout/activity_main_login_navigation_bar" />-->
 
     <ImageView
         android:id="@+id/iv_login_logo"
@@ -39,7 +39,7 @@
             android:layout_height="24dp"
             android:layout_marginLeft="14dp"
             android:contentDescription="@null"
-            app:srcCompat="@drawable/lr_singup_mobile"
+            app:srcCompat="@drawable/lr_login_username"
             tools:ignore="RtlHardcoded" />
 
         <View
@@ -49,14 +49,13 @@
             android:layout_marginRight="14dp"
             android:background="@color/login_line_color" />
 
-        <EditText
+        <android.support.v7.widget.AppCompatEditText
             android:id="@+id/et_register_username"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
             android:hint="@string/register_input_username_hint"
-            android:inputType="phone"
             android:maxLines="1"
             android:minLines="1"
             android:paddingLeft="4dp"
@@ -103,7 +102,7 @@
             android:layout_height="22dp"
             android:background="@color/login_line_color" />
 
-        <EditText
+        <android.support.v7.widget.AppCompatEditText
             android:id="@+id/et_register_auth_code"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -137,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:button="@drawable/ic_selector_checkbox"
-            android:checked="false"
+            android:checked="true"
             android:contentDescription="@null"
             android:textColor="@color/text_secondary_color"
             android:textSize="@dimen/font_12"

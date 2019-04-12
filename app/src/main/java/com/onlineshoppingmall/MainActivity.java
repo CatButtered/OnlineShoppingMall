@@ -24,7 +24,7 @@ import com.onlineshoppingmall.shoppingcart.cart.GoodContent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MessageFragment.OnListFragmentInteractionListener,
+public class MainActivity extends AppCompatActivity implements
         GoodItemFragment.OnListFragmentInteractionListener, CircleIconFragment.OnListFragmentInteractionListener,
         GoodImagesFragment.OnListFragmentInteractionListener {
     private static final String TAG = "MainActivity";
@@ -76,11 +76,6 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
             }
         });
         radioGroup.check(rbs[0]);
-    }
-
-    @Override
-    public void onListFragmentInteraction(MessageContent.MessageItem item) {
-
     }
 
     @Override

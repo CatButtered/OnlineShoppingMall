@@ -9,10 +9,10 @@ import java.util.List;
 
 public class ModelViewModel extends ViewModel {
 
-    public MutableLiveData<Double> total = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isAll = new MutableLiveData<>();
 
-    public MutableLiveData<Double> all_total = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isNone = new MutableLiveData<>();
 
-//    public MutableLiveData<List<GoodContent.GoodItem>> list = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isChanged = new MutableLiveData<>();
 
 }

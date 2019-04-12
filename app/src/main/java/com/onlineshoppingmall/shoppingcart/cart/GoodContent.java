@@ -1,5 +1,7 @@
 package com.onlineshoppingmall.shoppingcart.cart;
 
+import android.support.v7.widget.AppCompatCheckBox;
+
 import com.onlineshoppingmall.remote_entity.Good;
 
 import java.util.ArrayList;
@@ -13,15 +15,10 @@ public class GoodContent {
 
     private static Map<Integer, Good> cache = new HashMap<>();
 
+    private static List<AppCompatCheckBox> checkBoxes = new ArrayList<>();
+
     private static GoodItemRecyclerViewAdapter adapter = null;
 
-    public static GoodItemRecyclerViewAdapter getAdapter() {
-        return adapter;
-    }
-
-    public static void setAdapter(GoodItemRecyclerViewAdapter adapter) {
-        GoodContent.adapter = adapter;
-    }
 
     public static List<GoodItem> getITEMS() {
         return ITEMS;
@@ -46,6 +43,25 @@ public class GoodContent {
                 item.setSelected(0);
             }
         }
+    }
+
+    public static double getPrice() {
+        Double total = 0.0;
+        for (GoodItem item : ITEMS) {
+            if (item.getSelected() != 0) {
+                Good _item = cache.get(item.getGid());
+                total += item.getAmount() * (Double.valueOf(_item.getPrice().toPlainString()));
+            }
+        }
+        return total;
+    }
+
+    public static GoodItemRecyclerViewAdapter getAdapter() {
+        return adapter;
+    }
+
+    public static void setAdapter(GoodItemRecyclerViewAdapter adapter) {
+        GoodContent.adapter = adapter;
     }
 
     public static class GoodItem {

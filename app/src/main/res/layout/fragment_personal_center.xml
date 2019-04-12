@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/pc_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/pc_bg_top"
@@ -35,11 +36,12 @@
                 android:textStyle="bold" />
 
             <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/pc_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/leave_blank"
-                android:src="@drawable/setting" />
+                android:src="@drawable/pc_logout" />
         </RelativeLayout>
 
         <android.support.v7.widget.LinearLayoutCompat
@@ -75,7 +77,7 @@
                     android:textSize="@dimen/small_word_prompt" />
             </android.support.v7.widget.LinearLayoutCompat>
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/leave_blank"
@@ -83,7 +85,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/grid"
@@ -92,16 +94,17 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="关注店铺"
                     android:textColor="@color/white"
                     android:textSize="@dimen/small_word_prompt" />
-            </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/pc_address_block"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/leave_blank"
@@ -109,36 +112,37 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/grid"
                     android:gravity="center"
-                    android:text="230"
+                    android:text="1"
                     android:textColor="@color/white"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="地址"
                     android:textColor="@color/white"
                     android:textSize="@dimen/small_word_prompt" />
-            </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
 
         </android.support.v7.widget.LinearLayoutCompat>
+
     </android.support.v7.widget.LinearLayoutCompat>
 
 
-    <LinearLayout
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/leave_blank"
         android:layout_marginRight="@dimen/leave_blank"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/leave_blank"
@@ -150,7 +154,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="@dimen/grid">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -159,7 +163,7 @@
                     android:textSize="@dimen/main_text"
                     android:textStyle="bold" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -167,7 +171,7 @@
                     android:text="查看全部订单"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <ImageView
+                <android.support.v7.widget.AppCompatImageView
                     android:id="@+id/arrow_right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -177,12 +181,12 @@
                     android:src="@drawable/arrow_right" />
             </RelativeLayout>
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/grid">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -192,7 +196,7 @@
                     android:text="待付款"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -202,7 +206,7 @@
                     android:text="待发货"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -212,7 +216,7 @@
                     android:text="待收货"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -222,7 +226,7 @@
                     android:text="评价"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -231,10 +235,11 @@
                     android:gravity="center"
                     android:text="售后"
                     android:textSize="@dimen/small_word_prompt" />
-            </LinearLayout>
-        </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/leave_blank"
@@ -243,13 +248,13 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/leave_blank"
                 android:layout_marginBottom="@dimen/leave_blank">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -259,7 +264,7 @@
                     android:text="我的客服"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -269,7 +274,7 @@
                     android:text="主题"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -279,7 +284,7 @@
                     android:text="帮助中心"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -289,15 +294,15 @@
                     android:text="我的资产"
                     android:textSize="@dimen/small_word_prompt" />
 
-            </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
 
-            <LinearLayout
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp">
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -307,7 +312,7 @@
                     android:text="野生动物"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -317,7 +322,7 @@
                     android:text="京夕优惠"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -327,7 +332,7 @@
                     android:text="我的红包"
                     android:textSize="@dimen/small_word_prompt" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -337,11 +342,12 @@
                     android:text="个人中心"
                     android:textSize="@dimen/small_word_prompt" />
 
-            </LinearLayout>
-        </LinearLayout>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.LinearLayoutCompat>
 
 
-    </LinearLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -351,14 +357,13 @@
         android:layout_marginRight="@dimen/leave_blank"
         android:background="@drawable/shape_corner">
 
-        <TextView
+        <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:drawableStart="@drawable/add"
             android:text="添加我的名片"
             android:textSize="@dimen/appbar_text" />
-
 
     </RelativeLayout>
 

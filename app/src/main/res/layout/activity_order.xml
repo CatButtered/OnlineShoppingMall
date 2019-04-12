@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_background"
-    tools:context=".communication.ChatList.ChatActivity">
+    tools:context=".penson.addord.OrderActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/chat_tool_bar"
+        android:id="@+id/order_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -22,7 +21,7 @@
             android:layout_marginEnd="@dimen/leave_blank">
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/chat_return"
+                android:id="@+id/address_return"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="@dimen/leave_blank"
@@ -32,72 +31,72 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/chat_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="订单"
                 android:textColor="@color/white"
                 android:textSize="@dimen/Headline"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="陈扬蟹黄汤包" />
+                app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.Toolbar>
 
-    <!--<android.support.v7.widget.AppCompatTextView-->
-    <!--android:id="@+id/record"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginStart="@dimen/leave_blank"-->
-    <!--android:layout_marginEnd="@dimen/leave_blank"-->
-    <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/recyclerView"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_marginStart="@dimen/leave_blank"-->
-    <!--android:layout_marginEnd="@dimen/leave_blank"-->
-    <!--app:layout_constraintHeight_percent="0.9"-->
-    <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-    <android.support.v7.widget.LinearLayoutCompat
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/leave_blank"
-        android:layout_marginEnd="@dimen/leave_blank"
-        app:layout_constraintHeight_percent="0.85"
-        app:layout_constraintTop_toBottomOf="@id/chat_tool_bar" />
-
-    <!--<android.support.v7.widget.LinearLayoutCompat-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--app:layout_constraintHeight_percent="0.9"-->
-    <!--app:layout_constraintTop_toTopOf="parent">-->
-    <!--</android.support.v7.widget.LinearLayoutCompat>-->
-
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/input"
-        style="@style/InputBoxStyle"
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/show_address"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/send"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_margin="@dimen/leave_blank"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/order_edit_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_tool_bar" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/send"
+        android:id="@+id/order_edit_address"
+        android:layout_width="64dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/leave_blank"
+        android:background="@drawable/shape_btn"
+        android:text="编辑"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_tool_bar" />
+
+    <!--<android.support.v7.widget.AppCompatEditText-->
+    <!--android:id="@+id/input_address"-->
+    <!--style="@style/InputBoxStyle"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_margin="@dimen/leave_blank"-->
+    <!--app:layout_constraintEnd_toStartOf="@id/send"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/order_tool_bar" />-->
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/order_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/leave_blank"
+        app:layout_constraintBottom_toTopOf="@+id/order_commit"
+        app:layout_constraintTop_toBottomOf="@+id/show_address" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/order_commit"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="@dimen/grid"
+        android:layout_margin="@dimen/leave_blank"
         android:background="@drawable/button_primary"
         android:paddingStart="@dimen/grid"
         android:paddingEnd="@dimen/grid"
-        android:text="发送"
+        android:text="提交订单"
         android:textColor="@color/white"
-        app:layout_constraintBaseline_toBaselineOf="@id/input"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

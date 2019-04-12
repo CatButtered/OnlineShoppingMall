@@ -1,25 +1,33 @@
 package com.onlineshoppingmall.logreg;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.onlineshoppingmall.MainActivity;
+import com.onlineshoppingmall.MyApplication;
 import com.onlineshoppingmall.R;
+import com.onlineshoppingmall.remote_entity.User;
+import com.onlineshoppingmall.until.MyRequest;
+import com.onlineshoppingmall.until.ShareData;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener, ViewTreeObserver.OnGlobalLayoutListener, TextWatcher {
+import java.util.HashMap;
+import java.util.Map;
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener,
+        View.OnFocusChangeListener, ViewTreeObserver.OnGlobalLayoutListener,
+        TextWatcher, MyRequest.OnPost {
     //    private ImageButton mIbNavigationBack;
 //    private LinearLayout mLlLoginPull;
 //    private View mLlLoginLayer;
@@ -39,12 +47,42 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Toast mToast;
     private int mLogoHeight;
     private int mLogoWidth;
+
+    private CheckBox isRem;
+    private ShareData shareData;
+
+    View statusBarView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
+        shareData = new ShareData(this);
+        if (shareData.readShared("isrem") != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
+
+        getWindow().getDecorView().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                initstatusBarView();
+                getWindow().getDecorView().removeOnLayoutChangeListener(this);
+            }
+        });
+
         initView();
     }
+
+    private void initstatusBarView() {
+        if (statusBarView == null) {
+            int identifier = getResources().getIdentifier("statusBarBackground", "id", "android");
+            statusBarView = getWindow().findViewById(identifier);
+        }
+        if (statusBarView != null) {
+            statusBarView.setBackgroundResource(R.drawable.background_login);
+        }
+    }
+
     //初始化视图
     private void initView() {
 
@@ -65,9 +103,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtLoginSubmit = findViewById(R.id.bt_login_submit);
         mBtLoginRegister = findViewById(R.id.bt_login_register);
 
+        isRem = findViewById(R.id.cb_remember_login);
+
         //忘记密码
-        mTvLoginForgetPwd = findViewById(R.id.tv_login_forget_pwd);
-        mTvLoginForgetPwd.setOnClickListener(this);
+//        mTvLoginForgetPwd = findViewById(R.id.tv_login_forget_pwd);
+//        mTvLoginForgetPwd.setOnClickListener(this);
 
         //注册点击事件
         // mLlLoginPull.setOnClickListener(this);
@@ -160,6 +200,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mBtLoginSubmit.setTextColor(getResources().getColor(R.color.white));
         }
     }
+
     private void showToast(int msg) {
         if (null != mToast) {
             mToast.setText(msg);
@@ -169,9 +210,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mToast.show();
     }
-    private void loginRequest() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
+    private void loginRequest() {
+        if (shareData.readShared("isrem") == null) {
+            MyRequest.volley_Post(this, "user/selectUser");
+        } else {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
     }
 
     @Override
@@ -182,5 +227,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onGlobalLayout() {
 
+    }
+
+    @Override
+    public void onSuccess(String res) {
+        User user = MyApplication.getGson().fromJson(res, User.class);
+        if (user == null) {
+            Toast.makeText(this, "用户名及密码错误!", Toast.LENGTH_SHORT).show();
+        } else {
+            shareData.writeShared("uid", String.valueOf(user.getId()));
+            shareData.writeShared("username", user.getUsername());
+            shareData.writeShared("password", user.getPassword());
+            if (isRem.isChecked()) {
+                shareData.writeShared("isrem", "1");
+            }
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
+    }
+
+    @Override
+    public void onFailure() {
+        Toast.makeText(this, "用户名及密码错误!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Map<String, String> setParam() {
+        Map<String, String> map = new HashMap<>();
+        String username = mEtLoginUsername.getText().toString().trim();
+        String pwd = mEtLoginPwd.getText().toString().trim();
+        map.put("username", username);
+        map.put("password", pwd);
+        return map;
     }
 }

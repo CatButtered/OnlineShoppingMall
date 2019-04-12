@@ -12,9 +12,9 @@ public class MyApplication extends Application {
 
     private static Gson gson;
 
-    private static String host = "http://192.168.38.15:8080/jxx/";
+    private static String host = "http://192.168.43.24:8080/jxx/";
 
-    private static String wshost = "ws://192.168.38.15:8080/jxx/";
+    private static String wshost = "ws://192.168.43.24:8080/jxx/";
 
     @Override
     public void onCreate() {

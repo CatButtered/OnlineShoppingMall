@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,7 +29,7 @@ public class MessageRecordDao extends SQLiteOpenHelper {
 
     }
 
-    public void addMessage(String message, int OID, int KIND) throws ParseException {
+    public void addMessage(String message, int OID, int KIND) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         df.format(new Date());
         long time = time();
@@ -46,18 +45,15 @@ public class MessageRecordDao extends SQLiteOpenHelper {
         return dateFormat.format(time);
     }
 
-    public static long time() throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        //dateFormat.format();
-        Long nowday = Long.parseLong(dateFormat.format(new Date()).toString());
-        return nowday;
+    public static long time() {
+        return new Date().getTime();
     }
 
     public List<MessageRecord> query() {
 
         List<MessageRecord> messageList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        String qu_sql = "select a.* from meaasge a where a.date = (select max(date) from message where oid = a.oid ) ORDER by date DESC limit 15";
+        String qu_sql = "select a.* from message a where a.date = (select max(date) from message where oid = a.oid ) ORDER by date DESC limit 10";
         Cursor cursor = sqLiteDatabase.rawQuery(qu_sql, null);
         while (cursor.moveToNext()) {
             MessageRecord message = new MessageRecord();

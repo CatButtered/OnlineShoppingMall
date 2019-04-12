@@ -51,4 +51,15 @@ public class MessageRecord {
     public void setKind(int kind) {
         this.kind = kind;
     }
+
+    @Override
+    public String toString() {
+        return "MessageRecord{" +
+                "id=" + id +
+                ", oid=" + oid +
+                ", date=" + date +
+                ", content='" + content + '\'' +
+                ", kind=" + kind +
+                '}';
+    }
 }

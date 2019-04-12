@@ -4,6 +4,8 @@ package com.onlineshoppingmall.home;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -36,19 +38,19 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
     private int[] imgIdArray;
     private ViewGroup group;
 
-//    Handler handler = new Handler(){
-//      @Override
-//        public void handleMessage(Message msg) {
-//            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
-//        }
-//    };
-//    Runnable runnable = new Runnable() {
-//        @Override
-//        public void run() {
-//            viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
-//            autoplay();
-//        }
-//    };
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+        }
+    };
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+            autoplay();
+        }
+    };
 
     public HomePageFragment() {
         // Required empty public constructor
@@ -75,31 +77,30 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
         transaction.add(R.id.home_page_list_h, CircleIconFragment.newInstance(2));
         transaction.add(R.id.home_page_list_v, GoodImagesFragment.newInstance(2));
         transaction.commit();
-//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int i, float v, int i1) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int i) {
-//                setImageBackground(i % AppCompatImageViews.length);
-//
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int i) {
-//
-//
-//            }
-//        }); autoplay();
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                setImageBackground(i % AppCompatImageViews.length);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+
+            }
+        });
+        autoplay();
         return v;
     }
-    //实现自动播放
-//    public void autoplay(){
-//        Log.i("TAG","123456");
-//        handler.postDelayed(runnable,5000);
-//    }
+
+    public void autoplay() {
+        handler.postDelayed(runnable, 5000);
+    }
 
 
     //viewpager初始化
@@ -110,11 +111,11 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
             AppCompatImageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
             tips[i] = AppCompatImageView;
             if (i == 0) {
-//                tips[i].setBackgroundResource(R.drawable.home_pot1);
-                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot1);
+                tips[i].setBackgroundResource(R.drawable.home_pot1);
+//                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot1);
             } else {
-//                tips[i].setBackgroundResource(R.drawable.home_pot2);
-                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot2);
+                tips[i].setBackgroundResource(R.drawable.home_pot2);
+//                MyRequest.setBitmap(this.getContext(), tips[i], R.drawable.home_pot2);
             }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             layoutParams.leftMargin = 1;
@@ -170,6 +171,7 @@ public class HomePageFragment extends Fragment implements View.OnClickListener {
                 tips[i].setBackgroundResource(R.drawable.home_pot1);
             } else {
                 tips[i].setBackgroundResource(R.drawable.home_pot2);
+
             }
         }
     }

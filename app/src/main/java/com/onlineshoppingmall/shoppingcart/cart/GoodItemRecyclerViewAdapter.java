@@ -5,7 +5,6 @@ import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +39,9 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
         mValues = items;
         mListener = listener;
         mViewModel = viewModel;
-        mViewModel.total.setValue(0.0);
-        mViewModel.all_total.setValue(0.0);
+        viewModel.isAll.setValue(false);
+        viewModel.isNone.setValue(false);
+        viewModel.isChanged.setValue(false);
     }
 
     @Override
@@ -56,27 +56,25 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
-//        Log.d(TAG, "onBindViewHolder: "+String.valueOf(mValues.get(position).selected));
         holder.select.setChecked(mValues.get(position).getSelected() != 0);
         holder.select.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    holder.mItem.setSelected(1);
-                    goodItemDao.updateSelected(holder.mItem.getId(), 1);
+                if (buttonView.isPressed()) {
+                    if (isChecked) {
+                        holder.mItem.setSelected(1);
+                        goodItemDao.updateSelected(holder.mItem.getId(), 1);
+                        mViewModel.isChanged.setValue(true);
 
-                    int amount = holder.mItem.getAmount();
-                    Double money = amount * Double.valueOf(holder.rItem.getPrice().toPlainString());
-                    mViewModel.total.setValue(mViewModel.total.getValue() + money);
-                    Log.d(TAG, String.valueOf(holder.mItem.getSelected()));
-                } else {
-                    holder.mItem.setSelected(0);
-                    goodItemDao.updateSelected(holder.mItem.getId(), 0);
+                    } else {
+//                        if (mViewModel.isAll.getValue()) {
+//                            mViewModel.isAll.setValue(false);
+//                        }
+                        holder.mItem.setSelected(0);
+                        goodItemDao.updateSelected(holder.mItem.getId(), 0);
+                        mViewModel.isChanged.setValue(true);
 
-                    int amount = holder.mItem.getAmount();
-                    Double money = amount * Double.valueOf(holder.rItem.getPrice().toPlainString());
-                    mViewModel.total.setValue(mViewModel.total.getValue() - money);
-                    Log.d(TAG, String.valueOf(holder.mItem.getSelected()));
+                    }
                 }
             }
         });
@@ -88,14 +86,8 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
                 holder.amount.setText(String.valueOf(amount));
                 holder.mItem.setAmount(amount);
                 goodItemDao.updateAmount(holder.mItem.getId(), amount);
+                mViewModel.isChanged.setValue(true);
 
-                Double money = Double.valueOf(holder.rItem.getPrice().toPlainString());
-                double total = mViewModel.total.getValue();
-                double all_total = mViewModel.all_total.getValue();
-                if (holder.select.isChecked()) {
-                    mViewModel.total.setValue(total + money);
-                }
-                mViewModel.all_total.setValue(all_total + money);
             }
         });
         holder.sub.setOnClickListener(new View.OnClickListener() {
@@ -107,14 +99,8 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
                     holder.amount.setText(String.valueOf(amount));
                     holder.mItem.setAmount(amount);
                     goodItemDao.updateAmount(holder.mItem.getId(), amount);
+                    mViewModel.isChanged.setValue(true);
 
-                    Double money = Double.valueOf(holder.rItem.getPrice().toPlainString());
-                    double total = mViewModel.total.getValue();
-                    double all_total = mViewModel.all_total.getValue();
-                    if (holder.select.isChecked()) {
-                        mViewModel.total.setValue(total - money);
-                    }
-                    mViewModel.all_total.setValue(all_total - money);
                 }
             }
         });
@@ -132,13 +118,6 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
                     holder.name.setText(holder.rItem.getName());
                     holder.price.setText("￥" + holder.rItem.getPrice());
 
-                    Double money = holder.mItem.getAmount() * Double.valueOf(holder.rItem.getPrice().toPlainString());
-                    double total = mViewModel.total.getValue();
-                    double all_total = mViewModel.all_total.getValue();
-                    if (holder.select.isChecked()) {
-                        mViewModel.total.setValue(total + money);
-                    }
-                    mViewModel.all_total.setValue(all_total + money);
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -154,21 +133,12 @@ public class GoodItemRecyclerViewAdapter extends RecyclerView.Adapter<GoodItemRe
             holder.name.setText(holder.rItem.getName());
             holder.price.setText("￥" + holder.rItem.getPrice());
 
-            Double money = holder.mItem.getAmount() * Double.valueOf(holder.rItem.getPrice().toPlainString());
-            double total = mViewModel.total.getValue();
-            double all_total = mViewModel.all_total.getValue();
-            if (holder.select.isChecked()) {
-                mViewModel.total.setValue(total + money);
-            }
-            mViewModel.all_total.setValue(all_total + money);
         }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
                     mListener.onListFragmentInteraction(holder.mItem);
                 }
             }

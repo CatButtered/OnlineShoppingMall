@@ -73,9 +73,10 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/cart_total"
-            android:layout_width="0dp"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/leave_blank"
+            android:gravity="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/Headline"
             app:layout_constraintBottom_toBottomOf="parent"

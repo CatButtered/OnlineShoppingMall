@@ -1,4 +1,4 @@
-package com.onlineshoppingmall.communication.PageList;
+package com.onlineshoppingmall.penson.addord.ord;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,19 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.onlineshoppingmall.R;
-import com.onlineshoppingmall.communication.PageList.MessageContent.MessageItem;
+import com.onlineshoppingmall.penson.addord.ord.OrderContent.OrderItem;
 
-public class MessageFragment extends Fragment {
+public class OrderItemFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
 
-    public MessageFragment() {
+    public OrderItemFragment() {
     }
 
     @SuppressWarnings("unused")
-    public static MessageFragment newInstance(int columnCount) {
-        MessageFragment fragment = new MessageFragment();
+    public static OrderItemFragment newInstance(int columnCount) {
+        OrderItemFragment fragment = new OrderItemFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -42,7 +42,7 @@ public class MessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_message_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_orderitem_list, container, false);
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -52,7 +52,7 @@ public class MessageFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MessageRecyclerViewAdapter());
+            recyclerView.setAdapter(new OrderItemRecyclerViewAdapter(OrderContent.ITEMS));
         }
         return view;
     }

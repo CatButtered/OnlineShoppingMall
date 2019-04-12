@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".penson.addord.add.AddressInfoActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/address_info_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/leave_blank">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/address_info_return"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/leave_blank"
+                android:background="@drawable/toolbar_return"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编辑收货地址"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Headline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/address_info_username"
+        style="@style/InputBoxStyle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入姓名"
+        android:textSize="@dimen/appbar_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_info_tool_bar" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/address_info_name"
+        style="@style/InputBoxStyle"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@null"
+        android:hint="请输入地址信息"
+        android:textSize="@dimen/appbar_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_info_username" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/_address_info_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/leave_blank"
+        android:text="设为默认地址"
+        android:textSize="@dimen/appbar_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_info_name" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/address_info_primary"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="@dimen/leave_blank"
+        android:background="@drawable/checkbox_change"
+        android:button="@null"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/_address_info_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/_address_info_primary" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/address_info_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/leave_blank"
+        android:background="@drawable/shape_btn"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
